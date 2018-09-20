@@ -1,12 +1,18 @@
 <html>
 <head>
     <script>
-function setCookie(cname, cvalue, exdays) {
+function setCookie(cname, cvalue) {
 	var d = new Date();
-	d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+	d.setTime(d.getTime() + (1 * 24 * 60 * 60 * 1000));
 	var expires = "expires=" + d.toUTCString();
 	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/;secure";
 }
+	    
+function borrarCookie(cname) {
+	var d = new Date(0);	
+	var expires = "expires=" + d.toUTCString();
+	document.cookie = cname + "=;" + expires + ";path=/;secure";
+}	    
 
 function getCookie(cname) {
 	var name = cname + "=";
@@ -27,7 +33,9 @@ function getCookie(cname) {
 </head>
 <body>
     <h1>TESTING</h1>
-	<a href="#" onclick="setCookie('info','{detallesDeclaracion: {}}',1)">set cookie</a>
+	<a href="#" onclick="setCookie('info','{detallesDeclaracion: {}}')">set cookie</a>
+	<br/>	
+	<a href="#" onclick="borrarCookie('info');">delete cookie</a>
 	<br/>
 	<a href="#" onclick="alert(getCookie('info'));">get cookie</a>
 	
