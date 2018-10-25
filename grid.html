@@ -1,4 +1,63 @@
 <html>
+	<head>
+		<style>
+			body {
+  margin: 40px;
+}
+
+.wrapper {
+  display: -ms-grid;
+  display: grid; 
+  grid-gap: 10px;
+  -ms-grid-columns: 100px 10px 100px 10px 100px;
+  -ms-grid-rows: 100px 10px 100px;
+  grid-template-columns: 100px 100px 100px;
+  background-color: #fff;
+  color: #444;
+}
+
+.box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+
+
+/* in the current spec these would be postioned using auto-placement. For IE we need to set the position of the items. */
+.a {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+
+.b {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
+
+.c {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+}
+
+.d {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
+
+.e {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+}
+
+.f {
+  -ms-grid-row: 3;
+  -ms-grid-column: 5;
+}
+			
+		</style>
+	</head>
 <body>
 <div style="display: grid; grid-template-columns: repeat(3, auto);">
 							<div style="background-color: #003300 !important; text-align: center !important; font-weight: bold !important; color: #FFFFFF !important;; grid-column: 1 / span 3;" class="datos-generales-fila-0"><label id="j_idt31:j_idt32:j_idt165" class="ui-outputlabel ui-widget" style="text-align: center !important; font-weight: bold !important; color: #FFFFFF !important;">Datos generales</label>
@@ -137,5 +196,15 @@
 							</div>			
 					</div>
 	<hr/>
+	
+	<h2>RFLZ</h2>
+	<div class="wrapper">
+  <div class="box a">A</div>
+  <div class="box b">B</div>
+  <div class="box c">C</div>
+  <div class="box d">D</div>
+  <div class="box e">E</div>
+  <div class="box f">F</div>
+</div>
 </body>          
 </html>
